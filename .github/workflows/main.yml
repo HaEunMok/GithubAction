@@ -1,0 +1,29 @@
+name: helloGithubAction
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+      with:
+        # 개인 토큰을 사용 여부
+        persist-credentials: false 
+    - name: 1. pip 업그레이드
+      run: python -m pip install --upgrade pip
+    - name: 2. 환경 설정 (패키지 설치)
+      run: pip install -r requirements.txt
+    - name: 3. 파이썬 실행
+      run: python jcb_crawling.py
+    - name: Commit files
+      run: |
+        git config --local user.email "${{ secrets.USER_EMAIL }}"
+        git config --local user.name "${{ secrets.USER_NAME }}"
+        git add .
+        git commit -m "Run crawler and update current data"
+    - name: Push changes
+      uses: ad-m/github-push-action@master
+      with:
+        # branch: "master"
+        github_token: ${{ secrets.GITHUB_TOKEN }}
