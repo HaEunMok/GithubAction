@@ -16,8 +16,6 @@ jobs:
       run: pip install -r requirements.txt
     - name: 3. 파이썬 실행
       run: |
-        current_directory = os.getcwd()
-        print(current_directory)
         python crawler/mainDataCrawler.py
         python crawler/fetchDataCrawler.py
     - name: Commit files
