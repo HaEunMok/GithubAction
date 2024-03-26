@@ -15,7 +15,9 @@ jobs:
     - name: 2. 환경 설정 (패키지 설치)
       run: pip install -r requirements.txt
     - name: 3. 파이썬 실행
-      run: python web_crawling.py
+      run: |
+        python crawler/mainDataCrawler.py
+        python crawler/fetchDataCrawler.py
     - name: Commit files
       run: |
         git config --local user.email "${{ secrets.USER_EMAIL }}"
