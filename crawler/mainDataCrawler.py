@@ -3,6 +3,9 @@ from bs4 import BeautifulSoup
 import csv
 import json
 
+current_directory = os.getcwd()
+print("현재 위치:", current_directory)
+
 response = requests.get("http://paullab.co.kr/stock.html")
 
 response.encoding = 'utf-8'
