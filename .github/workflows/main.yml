@@ -23,8 +23,7 @@ jobs:
         git config --local user.email ${{ secrets.USER_EMAIL }}
         git config --local user.name ${{ secrets.USER_NAME }}
         git add .
-        git diff --exit-code || git commit -am "ci lint and test
-        git commit -m "Run crawler and update current data"
+        git diff --exit-code || git commit -m "Run crawler and update current data"
     - name: Push changes
       uses: ad-m/github-push-action@master
       with:
