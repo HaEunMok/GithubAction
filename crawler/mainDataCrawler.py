@@ -2,6 +2,7 @@ import requests
 from bs4 import BeautifulSoup
 import csv
 import json
+import os
 
 current_directory = os.getcwd()
 print("현재 위치:", current_directory)
