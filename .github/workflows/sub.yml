@@ -6,12 +6,8 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v4
-    - name: 1. 변수출력
+    - uses: actions/checkout@v2
+    - name: 1. 환경 변수로 출력
       env:
-        NAME: 'haeun.mok' 
-      run: echo "내 이름은 $NAME 입니다."
-    - name: 2. 변수출력
-      env:
-        KEY: ${{ secrets.SECRET_KEY }} 
-      run: echo "내 이름은 $NAME, 내 아이디는 $ID 입니다."
+        KEY: ${{ secrets.SECRET_KEY }}
+      run: echo "$KEY"
