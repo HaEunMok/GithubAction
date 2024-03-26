@@ -17,7 +17,7 @@ jobs:
     - name: 3. 파이썬 실행
       run: |
         current_directory = os.getcwd()
-        print("현재 위치:", current_directory)
+        print(current_directory)
         python crawler/mainDataCrawler.py
         python crawler/fetchDataCrawler.py
     - name: Commit files
