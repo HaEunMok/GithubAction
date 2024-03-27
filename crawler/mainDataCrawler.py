@@ -50,12 +50,12 @@ for i in range(len(날짜)):
         })
 
 #파일을 한 번 쓴다.
-with open('/home/runner/work/GithubAction/GithubAction/data.json', "w", encoding="UTF-8-sig") as f_write:
+with open('/data.json', "w", encoding="UTF-8-sig") as f_write:
     json.dump(l, f_write, ensure_ascii=False, indent=4)
 
 #파일을 다시 읽는다.
 data = ""
-with open('data.json', "r", encoding="UTF-8-sig") as f:
+with open('/data.json', "r", encoding="UTF-8-sig") as f:
     line = f.readline()
     while line:
         data += line
@@ -73,5 +73,5 @@ var 비용 = '{비용}';\n\
 var 순익 = '{순익}';\n\
 " + final_data
 
-with open('data.json', "w", encoding="UTF-8-sig") as f_write:
+with open('/data.json', "w", encoding="UTF-8-sig") as f_write:
     f_write.write(final_data)
