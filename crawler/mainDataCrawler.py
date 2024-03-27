@@ -62,7 +62,7 @@ with open('json/data.json', "r", encoding="UTF-8-sig") as f:
         line = f.readline()
 
 #파일에 변수명을 추가하여 다시 쓴다.
-
+i=[
 final_data = f"var data = {data};"
 final_data = f"var 시가총액 = '{시가총액}';\n\
 var 시가총액순위 = '{시가총액순위}';\n\
@@ -72,6 +72,6 @@ var 매출 = '{매출}';\n\
 var 비용 = '{비용}';\n\
 var 순익 = '{순익}';\n\
 " + final_data
-
+]
 with open('json/data.json', "w", encoding="UTF-8-sig") as f_write:
     f_write.write(final_data)
