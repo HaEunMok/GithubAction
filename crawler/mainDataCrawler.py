@@ -50,7 +50,7 @@ for i in range(len(날짜)):
         })
 
 #파일을 한 번 쓴다.
-with open('data.json', "w", encoding="UTF-8-sig") as f_write:
+with open('/home/runner/work/GithubAction/GithubAction/data.json', "w", encoding="UTF-8-sig") as f_write:
     json.dump(l, f_write, ensure_ascii=False, indent=4)
 
 #파일을 다시 읽는다.
